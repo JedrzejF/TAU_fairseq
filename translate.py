@@ -1,11 +1,11 @@
-from fairseq.models.transformer import TransformerModel
+from fairseq.models.fconv import FConvModel
 import torch
 from tqdm import tqdm
 
-de2en = TransformerModel.from_pretrained(
-  'checkpoints/fconv_wmt_en_de',
+de2en = FConvModel.from_pretrained(
+  'checkpoints/fconv_iwslt_de_en',
   checkpoint_file='checkpoint_best.pt',
-  data_name_or_path='data-bin/wmt17_en_de',
+  data_name_or_path='data-bin/wmt18_de_en',
   bpe='subword_nmt',
   bpe_codes='bpe.32k/codes'
 )
